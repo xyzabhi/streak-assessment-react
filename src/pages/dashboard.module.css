@@ -1,6 +1,33 @@
-.dashboard{
-    display: flex;
+.dashboard {
+  display: flex;
 }
-.mainContent{
-    display: flex;
+
+.mainContent {
+  width: 100%;
+  margin-left: 30px;
+}
+
+.mainChart {
+  height: 450px;
+  /* background-color: red; */
+  width: 100%;
+}
+.subCharts {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Defines the columns */
+  gap: 10px;
+}
+.subchartsec1 {
+  border: solid #eaeaea 1px;
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.subchartsec2 {
+  border: solid #eaeaea 1px;
+  height: 300px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

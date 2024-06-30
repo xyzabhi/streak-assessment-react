@@ -9,7 +9,7 @@ function generateRandomData(numPoints) {
   return data;
 }
 
-const generatePieChartData = (numPoints,tagMessage) => {
+const generatePieChartData = (numPoints, tagMessage) => {
   const data = {};
   const label = [];
   const values = [];
@@ -29,9 +29,34 @@ const generatePieChartData = (numPoints,tagMessage) => {
   }
   data.label = label;
   data.values = values;
-  data.colors=colors;
-  data.tagMessage=tagMessage
+  data.colors = colors;
+  data.tagMessage = tagMessage;
+  return data;
+};
+const generateRandomNumber = (numPoints, max, min) => {
+  const data = [];
+  while (numPoints--) {
+    data.push(parseInt(Math.random() * (max - min) + min));
+  }
   return data;
 };
 
-export { generatePieChartData, generateRandomData };
+const generateLineChartData = (numPoints, label, max, min) => {
+  const data = {};
+  data.labels = generateRandomNumber(numPoints,max,min);
+  data.datasets = [];
+  data.datasets.push({
+    label: label,
+    data: generateRandomNumber(numPoints, max, min),
+    borderColor: "rgba(49,140,231)",
+    borderWidth: 2,
+    pointBorderWidth: 1,
+    backgroundColor: "rgba(49,140,231,0.4)",
+    fill: true,
+    legend: false,
+  });
+
+  return data;
+};
+
+export { generatePieChartData, generateRandomData, generateLineChartData };

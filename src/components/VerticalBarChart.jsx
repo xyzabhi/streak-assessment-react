@@ -27,6 +27,7 @@ export const options = {
       display: true,
       text: "Chart.js Bar Chart",
     },
+    responsive:true
   },
 };
 

@@ -2,10 +2,10 @@
   background-color: #fafafa;
   padding: 5px;
   width: 15%;
-  height: 100vh;
-  position: fixed;
+  height: 700px;
+  /* position: fixed;
   top: 90px;
-  left: 0;
+  left: 0; */
 }
 .sideBarTitle {
   display: flex;
