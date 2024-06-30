@@ -45,6 +45,11 @@ const generateLineChartData = (numPoints, label, max, min) => {
   const data = {};
   data.labels = generateRandomNumber(numPoints,max,min);
   data.datasets = [];
+  let sum=0;
+  for(let i=0;i<data.labels.length;i++){
+    sum+=data.labels[i];
+  }
+  data.Label=label
   data.datasets.push({
     label: label,
     data: generateRandomNumber(numPoints, max, min),
@@ -55,6 +60,7 @@ const generateLineChartData = (numPoints, label, max, min) => {
     fill: true,
     legend: false,
   });
+  data.total=sum;
 
   return data;
 };

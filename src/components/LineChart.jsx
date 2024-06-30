@@ -24,44 +24,58 @@ ChartJS.register(
   Filler
 );
 
-export const options = {
+const options = {
   responsive: true,
   plugins: {
     legend: {
-      // display: false,
-      position: "top", // Set legend position to top
-      align: "start",
-      boxWidth: 5,
+      display: false, // Hide the legend
     },
-    labels: {},
     title: {
       // display: true,
       // text: "Chart.js Line Chart",
     },
   },
-};
-
-const dummyData = generateLineChartData(100, "Users", 400, 500);
-
-export const data = {
-  labels: dummyData.labels,
-  datasets: [
-    {
-      label: dummyData.datasets[0].label,
-      data: dummyData.datasets[0].data,
-      borderColor: "rgba(49,140,231)",
-      borderWidth: 2,
-      pointBorderWidth: 1,
-      backgroundColor: "rgba(49,140,231,0.4)",
-      fill: true,
-      legend: false,
+  scales: {
+    x: {
+      ticks: {
+        display: false, // Hide x-axis labels
+      },
+      grid: {
+        display: false, // Hide x-axis grid lines
+      },
     },
-  ],
+    y: {
+      ticks: {
+        display: false, // Hide y-axis labels
+      },
+      grid: {
+        display: false, // Hide y-axis grid lines
+      },
+    },
+  },
 };
 
-export default function LineChart({ width, height, legendShow }) {
+// const dummyData = generateLineChartData(100, "Users", 400, 500);
+
+// export const data = {
+//   labels: dummyData.labels,
+//   datasets: [
+//     {
+//       label: dummyData.datasets[0].label,
+//       data: dummyData.datasets[0].data,
+//       borderColor: "rgba(49,140,231)",
+//       borderWidth: 2,
+//       pointBorderWidth: 1,
+//       backgroundColor: "rgba(49,140,231,0.4)",
+//       fill: true,
+//       legend: false,
+//     },
+//   ],
+// };
+
+export default function LineChart({data, width, height, legendShow }) {
   console.log(options);
   options.plugins.legend.display = legendShow;
-  console.log(options);
+  console.log(data);
   return <Line options={options} data={data} width={width} height={height} />;
 }
