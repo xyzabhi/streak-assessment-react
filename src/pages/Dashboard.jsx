@@ -1,11 +1,10 @@
 import React from "react";
 import SideBar from "../components/SideBar";
-import sidebarMenus from "../utils/constants";
+import {sidebarMenus} from "../utils/constants";
 import styles from "./dashboard.module.css";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { generatePieChartData } from "../utils/methods";
-import ChartCard from "../components/chartCard";
 ChartJS.register(ArcElement, Tooltip, Legend);
 const pieChartData = generatePieChartData(5, "Vistors");
 export const data = {

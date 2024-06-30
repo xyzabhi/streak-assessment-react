@@ -4,7 +4,7 @@
   width: 15%;
   height: 100vh;
   position: fixed;
-  top: 0;
+  top: 90px;
   left: 0;
 }
 .sideBarTitle {
@@ -36,7 +36,7 @@
   border-radius: 3px;
   background-color: #eaeaea;
   position: fixed;
-  top: 10px;
+  top: 90px;
   left: 10px;
 }
 
