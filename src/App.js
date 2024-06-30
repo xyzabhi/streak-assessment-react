@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
+import { generatePieChartData } from "./utils/methods";
 
-function App() {
+ChartJS.register(ArcElement, Tooltip, Legend);
+const pieChartData = generatePieChartData(5, "Vistors");
+export const data = {
+  labels: pieChartData.label,
+  datasets: [
+    {
+      label: pieChartData.tagMessage,
+      data: pieChartData.values,
+      backgroundColor: pieChartData.colors,
+      borderColor: pieChartData.colors,
+      borderWidth: 1,
+    },
+  ],
+};
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: "500px", height: "500px" }}>
+      <Pie data={data} />
     </div>
   );
 }
-
-export default App;
